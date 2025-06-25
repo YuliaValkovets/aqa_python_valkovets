@@ -7,7 +7,9 @@ from random import randint, choice, sample, randrange
 from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 from math import ceil
+from faker import Faker
 
+fake = Faker()
 
 __title__ = 'randominfo'
 __version__ = '2.0.2'
@@ -72,23 +74,10 @@ def get_gender(first_name):
 			break
 	return gender
 
-def get_country(first_name = None):
-	countryFile = csv.reader(open(full_path('data.csv'), 'r'))
-	country = ""
-	if first_name != None:
-		for data in countryFile:
-			if data[0] != '' and data[0] == first_name:
-				country = data[3]
-				break
-		if country == "":
-			print("Specified user data is not available. Tip: Generate random country.")
-	else:
-		filteredData = []
-		for data in countryFile:
-			if data[12] != '':
-				filteredData.append(data[12])
-		country = choice(filteredData)
-	return country
+def get_country(first_name=None):
+    if first_name:
+        print("No country info in file. Generating random country for", first_name)
+    return fake.country()
 
 def get_full_name(gender = None):
 	return get_first_name(gender) + " " + get_last_name()
@@ -259,28 +248,26 @@ def get_birthdate(startAge = None, endAge = None, _format = "%d %b, %Y"):
 
 def get_address():
 	full_addr = []
-	addrParam = ['street', 'landmark', 'area', 'city', 'state', 'country', 'pincode']
-	for i in range(5,12):
-		addrFile = csv.reader(open(full_path('data.csv'), 'r'))
-		allAddrs = []
-		for addr in addrFile:
-			try:
-				if addr[i] != '':
-					allAddrs.append(addr[i])
-			except:
-				pass
-		full_addr.append(choice(allAddrs))
-	full_addr = dict(zip(addrParam, full_addr))
-	return full_addr
+	addrParam = ['street', 'landmark', 'area', 'city', 'state', 'pincode']
+	for i in range(4,10):
+		with open(full_path('data.csv'), 'r') as f:
+			addrFile = csv.reader(f)
+			allAddrs = [row[i] for row in addrFile if len(row) > i and row[i] != '']
+		if allAddrs:
+			full_addr.append(choice(allAddrs))
+		else:
+			full_addr.append('')
+	return dict(zip(addrParam, full_addr))
+
 
 def get_hobbies():
 	hobbiesFile = csv.reader(open(full_path('data.csv'), 'r'))
 	allHobbies = []
 	for data in hobbiesFile:
-		if data[4] != '':
-			allHobbies.append(data[4])
+		if data[3] != '':
+			allHobbies.append(data[3])
 	hobbies = []
-	for _ in range (1, randint(2,6)):
+	for _ in range (randint(2,5)):
 		hobbies.append(choice(allHobbies))
 	return hobbies
 
