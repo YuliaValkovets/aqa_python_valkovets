@@ -1,0 +1,35 @@
+2025-07-21 22:56:28,300 - INFO - 
+***Test: test_search_cars[brand-1]***
+2025-07-21 22:56:28,300 - INFO - GET http://127.0.0.1:8080/cars?{'sort_by': 'brand', 'limit': 1}
+2025-07-21 22:56:28,306 - INFO - Status code: 200
+2025-07-21 22:56:28,306 - INFO - Number of cars: 1
+2025-07-21 22:56:28,309 - INFO - 
+***Test: test_search_cars[year-25]***
+2025-07-21 22:56:28,310 - INFO - GET http://127.0.0.1:8080/cars?{'sort_by': 'year', 'limit': 25}
+2025-07-21 22:56:28,314 - INFO - Status code: 200
+2025-07-21 22:56:28,315 - INFO - Number of cars: 25
+2025-07-21 22:56:28,317 - INFO - 
+***Test: test_search_cars[engine_volume-12]***
+2025-07-21 22:56:28,317 - INFO - GET http://127.0.0.1:8080/cars?{'sort_by': 'engine_volume', 'limit': 12}
+2025-07-21 22:56:28,320 - INFO - Status code: 200
+2025-07-21 22:56:28,321 - INFO - Number of cars: 12
+2025-07-21 22:56:28,324 - INFO - 
+***Test: test_search_cars[price-2]***
+2025-07-21 22:56:28,324 - INFO - GET http://127.0.0.1:8080/cars?{'sort_by': 'price', 'limit': 2}
+2025-07-21 22:56:28,328 - INFO - Status code: 200
+2025-07-21 22:56:28,328 - INFO - Number of cars: 2
+2025-07-21 22:56:28,331 - INFO - 
+***Test: test_search_cars[None-24]***
+2025-07-21 22:56:28,331 - INFO - GET http://127.0.0.1:8080/cars?{'limit': 24}
+2025-07-21 22:56:28,336 - INFO - Status code: 200
+2025-07-21 22:56:28,336 - INFO - Number of cars: 24
+2025-07-21 22:56:28,338 - INFO - 
+***Test: test_search_cars[year-None]***
+2025-07-21 22:56:28,338 - INFO - GET http://127.0.0.1:8080/cars?{'sort_by': 'year'}
+2025-07-21 22:56:28,342 - INFO - Status code: 200
+2025-07-21 22:56:28,342 - INFO - Number of cars: 25
+2025-07-21 22:56:28,344 - INFO - 
+***Test: test_search_cars[None-None]***
+2025-07-21 22:56:28,344 - INFO - GET http://127.0.0.1:8080/cars?{}
+2025-07-21 22:56:28,349 - INFO - Status code: 200
+2025-07-21 22:56:28,349 - INFO - Number of cars: 25
