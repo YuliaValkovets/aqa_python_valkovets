@@ -45,11 +45,10 @@ git clone https://github.com/YuliaValkovets/aqa_python_valkovets.git
 
 cd aqa_python_valkovets
 
-python -m venv venv && source venv/bin/activate  # Windows: venv\Scripts\activate
-
 pip install -r requirements.txt
 
-pytest lesson_27/ lesson_10/ lesson_09/  # Run Web UI, API, and Unit tests
+pytest lesson_27/ lesson_10/ lesson_09/
+
 ---
 
 ## Contacts
