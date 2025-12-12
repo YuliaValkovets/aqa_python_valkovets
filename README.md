@@ -4,8 +4,8 @@ This repository contains practical tasks and training projects from the QA Autom
 
 ---
 
-## Key skills: 
-Python automation, Selenium (web UI), Pytest (unit & API tests, fixtures, parametrization), Page Object Model, XPath/CSS selectors, HTTP requests (GET/POST/PUT/DELETE), logging.
+## Key skills
+Python automation, Web UI Automation with Selenium (locators, WebDriver management, explicit waits), Pytest (unit & API tests, fixtures, parametrization), Page Object Model, XPath/CSS selectors, HTTP requests (GET/POST/PUT/DELETE), logging.
 
 ---
 
